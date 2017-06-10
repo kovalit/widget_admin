@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import './App.css';
-import Select from './components/Select';
+
+import Select from '../../components/Select';
 
 class App extends Component {
     
-    constructor() {
-        super();
+    constructor(props) {
+        (props);
         this.state = {};
 	this.marketing = {};
 	this.onChange = this.onChange.bind(this);
 	this.onClick = this.onClick.bind(this);
+    }
+    
+    componentDidMount() {
+	this.state = {};
     }
 
     
@@ -72,7 +76,7 @@ class App extends Component {
 		    <input type="checkbox"  
 			defaultChecked={setting.splitTest}  
 			name="splitTest" 
-			onChange={function (event) {setting.splitTest = event.target.checked;}} />
+			onChange={function (event) {setting.enabled = event.target.checked;}} />
 		</div>
 	    </div>
 	);
